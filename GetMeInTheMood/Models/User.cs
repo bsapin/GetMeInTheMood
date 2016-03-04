@@ -15,8 +15,6 @@ namespace GetMeInTheMood.Models
 
         public string password { get; set; }
 
-        public Playlist PlaylistID { get; set; }
-
         public List<Playlist> Playlists { get; set; }
 
     }

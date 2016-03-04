@@ -11,13 +11,9 @@ namespace GetMeInTheMood.Models
 
         public string Name { get; set; }
 
-        public User UserID { get; set; }
-
-        public Song SongID { get; set; }
+        public User User { get; set; }
 
         public List<Song> Songs { get; set; }
-
-        public Mood MoodID { get; set; }
 
         public Mood Mood { get; set; }
 

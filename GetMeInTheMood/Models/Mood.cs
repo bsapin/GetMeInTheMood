@@ -13,8 +13,6 @@ namespace GetMeInTheMood.Models
 
         public string ImageUrl { get; set; }
 
-        public Playlist PlaylistID { get; set; }
-
         public List<Playlist> Playlists { get; set; }
     }
 }
