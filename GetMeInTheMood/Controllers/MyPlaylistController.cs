@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace GetMeInTheMood.Controllers
 {
-    public class MyPlaylistsController : Controller
+    public class MyPlaylistController : Controller
     {
         // GET: MyPlaylists
         public ActionResult Index()
