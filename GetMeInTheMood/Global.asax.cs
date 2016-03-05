@@ -23,6 +23,8 @@ namespace GetMeInTheMood
         }
 
         public void ConfigureServices(IServiceCollection services)
-        { }
+        {
+            services.AddMvc();
+        }
     }
 }
