@@ -13,7 +13,7 @@ namespace GetMeInTheMood.Models
 
         public string status { get; set; }
 
-        public List<Playlist> Playlists { get; set; }
+        public List<Playlist> playlists { get; set; }
 
     }
 }

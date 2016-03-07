@@ -21,10 +21,5 @@ namespace GetMeInTheMood
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddMvc();
-        }
     }
 }

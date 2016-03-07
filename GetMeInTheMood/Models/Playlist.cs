@@ -9,13 +9,13 @@ namespace GetMeInTheMood.Models
     {
         public int ID { get; set; }
 
-        public string Name { get; set; }
+        public string name { get; set; }
 
-        public User User { get; set; }
+        public User user { get; set; }
 
-        public List<Song> Songs { get; set; }
+        public List<Song> songs { get; set; }
 
-        public Mood Mood { get; set; }
+        public Mood mood { get; set; }
 
     }
 }

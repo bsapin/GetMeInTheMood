@@ -8,10 +8,10 @@ namespace GetMeInTheMood.Models
     public class Mood
     {
         public int ID { get; set; }
+    
+        public string name { get; set; }
 
-        public string Name { get; set; }
-
-        public string ImageUrl { get; set; }
+        public string imageUrl { get; set; }
 
         public List<Playlist> Playlists { get; set; }
     }
