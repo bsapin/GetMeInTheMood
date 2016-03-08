@@ -11,8 +11,7 @@ namespace GetMeInTheMood.Models
         public int ID { get; set; }
 
         [Required]
-        [EmailAddress]
-        [StringLength(160, MinimumLength = 2)]
+        [StringLength(160, MinimumLength = 8)]
         public string email { get; set; }
 
         [Required]

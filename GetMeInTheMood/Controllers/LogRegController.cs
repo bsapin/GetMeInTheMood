@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -18,11 +19,11 @@ namespace GetMeInTheMood.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult LoginSubmit()
+        public ActionResult Login(string email,string password)
         {
-            string email = Request.Form["email"];
+            email = GetSha256FromString(Request.Form["email"]);
+            password = GetSha256FromString(Request.Form["password"]);
 
-            string password = Request.Form["password"];
             var id = -1;
             if (ModelState.IsValid)
             {
@@ -37,7 +38,12 @@ namespace GetMeInTheMood.Controllers
                 else
                     return HttpNotFound();
             }
-            return View("Login");
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
         }
 
         private int findUser(string email)
@@ -49,12 +55,18 @@ namespace GetMeInTheMood.Controllers
             }
             return -1;
         }
-
-        public ActionResult Register()
+        private static string GetSha256FromString(string strData)
         {
-            return View();
-        }
+            var message = Encoding.ASCII.GetBytes(strData);
+            SHA256Managed hashString = new SHA256Managed();
+            string hex = "";
 
-       
+            var hashValue = hashString.ComputeHash(message);
+            foreach (byte x in hashValue)
+            {
+                hex += String.Format("{0:x2}", x);
+            }
+            return hex;
+        }       
     }
 }

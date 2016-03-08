@@ -13,8 +13,8 @@ namespace GetMeInTheMood.DAL
         {
             var users = new List<User>()
             {
-                new User() { email = "berislav.sapina@gmail.com", username="bero", password="bero1993"},
-                new User() { email = "boriskostres92@gmail.com", username="boki", password="boki1991"}
+                new User() { email = "1913ec27810b186f6ce6b83a8a2d211e4d167b08c4c4030b0db09a3d24e492cf", username="bero", password="7418a4b3814752a06da82d8bf329a5ee7ef92073efd22b112b4d7a03b51726d0"},
+                new User() { email = "1913ec27810b186f6ce6b83a8a2d211e4d167b08c4c4030b0db09a3d24e492cf", username="boki", password="22332ceaabea99e1600707af9844b56ca9173a6a14bc2db0a09d43e9b3364160"}
             };
 
             users.ForEach(user => context.Users.Add(user));
