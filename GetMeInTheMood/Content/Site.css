@@ -8,7 +8,14 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-
+.log-reg-form{
+    width:40%;
+    margin: 5em auto;
+    padding-right:20%;
+}
+.log-reg-form > h2{
+    margin:1em auto;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */

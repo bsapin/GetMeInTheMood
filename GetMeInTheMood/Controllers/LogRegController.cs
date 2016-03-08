@@ -45,6 +45,32 @@ namespace GetMeInTheMood.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Register(string username,string email,string password)
+        {
+            username = Request.Form["username"];
+            email = Request.Form["email"];
+            password = Request.Form["password1"];
+
+            if(ModelState.IsValid)
+            {
+                if (""==username || "" == email || ""==password)
+                    return View();
+                else
+                {
+                    User user = new User();
+                    user.username = username;
+                    user.email =  GetSha256FromString(email);
+                    user.password = GetSha256FromString(password);
+
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return View();
+        }
 
         private int findUser(string email)
         {

@@ -1,9 +1,10 @@
 ﻿@{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Log in";
 }
-<h2>@ViewBag.Title.</h2>
+<div class="log-reg-form">
+<h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm("Login", "LogReg"))
+@using (Html.BeginForm("Login", "LogReg","POST"))
 {
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -13,5 +14,6 @@
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default">Log in</button>
 }
+</div>
