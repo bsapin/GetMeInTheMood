@@ -8,6 +8,7 @@ namespace GetMeInTheMood.Controllers
 {
     public class LogRegController : Controller
     {
+        [HttpPost]
         public ActionResult Login()
         {
             return View();
