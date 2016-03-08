@@ -33,7 +33,12 @@ namespace GetMeInTheMood.Controllers
                 if(user!=null)
                 {
                     if (user.password == password)
+                    {
+                        Session["logreg"] = "Success";
                         return RedirectToAction("Index", "Home");
+                    }
+                    else
+                        return View();
                 }
                 else
                     return HttpNotFound();
@@ -65,6 +70,7 @@ namespace GetMeInTheMood.Controllers
 
                     db.Users.Add(user);
                     db.SaveChanges();
+                    Session["logreg"] = "Success";
                     return RedirectToAction("Index", "Home");
                 }
             }

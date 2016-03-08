@@ -22,11 +22,21 @@
                 <ul class="nav navbar-nav">
                     <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                     <li><a href="@Url.Action("Moods", "Home")"><span class="glyphicon glyphicon-music"></span> Moods</a></li>
-                    <li><a href="@Url.Action("MostPopular", "Home")"><span class="glyphicon glyphicon-star"></span> MostPopular</a></li>              
+                    <li><a href="@Url.Action("MostPopular", "Home")"><span class="glyphicon glyphicon-star"></span> MostPopular</a></li>
+                    @{ if (Session["logreg"] != null)
+                        {
+                            <li><a href="@Url.Action("Index", "MyPlaylist")"><span class="glyphicon glyphicon-th-list"></span> My playlist</a></li>
+                        }
+                    }              
                 </ul>
                 <ul class="nav navbar-nav pull-right" >
-                    <li>@Html.ActionLink("Log in", "Login", "LogReg")</li>
-                    <li>@Html.ActionLink("Register", "Register", "LogReg")</li>
+                    @{ if (Session["logreg"] == null)
+                        {
+                            <li>@Html.ActionLink("Log in", "Login", "LogReg")</li>
+                            <li>@Html.ActionLink("Register", "Register", "LogReg")</li>
+                        }
+                        else {<li><a><span class="glyphicon glyphicon-user"></span> User</a></li>}
+                    }
                 </ul>
             </div>
         </div>
