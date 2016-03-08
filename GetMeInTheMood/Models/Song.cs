@@ -9,7 +9,7 @@ namespace GetMeInTheMood.Models
     {
         public int ID { get; set; }
 
-        public Uri url { get; set; }
+        public string url { get; set; }
 
         public string status { get; set; }
 

@@ -21,20 +21,33 @@ namespace GetMeInTheMood.Controllers
         public ActionResult LoginSubmit()
         {
             string email = Request.Form["email"];
-            string password = Request.Form["password"];
-            if (ModelState.IsValid) {
 
-                User user = db.Users.Find(email);
+            string password = Request.Form["password"];
+            var id = -1;
+            if (ModelState.IsValid)
+            {
+                id = findUser(email);
+                User user = db.Users.Find(id);
 
                 if(user!=null)
                 {
-                    if (SHA1.Create(user.password).ToString() == password)
-                        return RedirectToAction("Register");
+                    if (user.password == password)
+                        return RedirectToAction("Index", "Home");
                 }
                 else
                     return HttpNotFound();
             }
             return View("Login");
+        }
+
+        private int findUser(string email)
+        {
+            foreach(var user in db.Users)
+            {
+                if (email == user.email)
+                    return user.ID;
+            }
+            return -1;
         }
 
         public ActionResult Register()
