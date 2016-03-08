@@ -21,7 +21,7 @@ namespace GetMeInTheMood.DAL
                            },
                 new User() {
                     /*email = "boriskostres92@gmail.com", username="boki", password="boki1991"*/
-                    email = "0268358dc84e14217be3a5f406ff3f4cb4a0611bd5aa18ff6a932d2033fbe730",
+                    email = "boriskostres92@gmail.com",
                     username = "boki",
                     password = "da6e2fe0d5c605a95e5f2f2d162af47e642960b1ad71fa94e1d8d95311503471"
                            }
