@@ -10,6 +10,7 @@ namespace GetMeInTheMood.Controllers
     {
         public ActionResult Login()
         {
+            
             return View();
         }
 
