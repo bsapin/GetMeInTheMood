@@ -34,6 +34,7 @@ namespace GetMeInTheMood.Controllers
                 {
                     if (user.password == password)
                     {
+                        TempData["username"] = user.username;
                         Session["logreg"] = "Success";
                         return RedirectToAction("Index", "Home");
                     }
@@ -70,6 +71,8 @@ namespace GetMeInTheMood.Controllers
 
                     db.Users.Add(user);
                     db.SaveChanges();
+
+                    TempData["username"] = user.username;
                     Session["logreg"] = "Success";
                     return RedirectToAction("Index", "Home");
                 }
